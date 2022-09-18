@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "702887089472",
+    "project_id": "mini-store-28200",
+    "storage_bucket": "mini-store-28200.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702887089472:android:6e3cb5512b8bc5e2cd96a5",
+        "android_client_info": {
+          "package_name": "com.example.mini_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "702887089472-sl9vn9shmfg8ifrkpq0t5fe3mjnauhfo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mini_store",
+            "certificate_hash": "f3e08b54d5a060c216e939971dbf2fa90e1c31ca"
+          }
+        },
+        {
+          "client_id": "702887089472-9e8apaivgui6e8k2mj2hadle8cp1cc5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBH9EInv2PLenGUnIb0Klso13cimHuwWw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "702887089472-9e8apaivgui6e8k2mj2hadle8cp1cc5i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
