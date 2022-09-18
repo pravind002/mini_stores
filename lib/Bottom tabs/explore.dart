@@ -57,11 +57,11 @@ class _ExplorePageState extends State<ExplorePage> {
                   ],),
                 ),
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               SizedBox(height: Get.height*.15,
               child: OfferPage(),),
               const SizedBox(height: 20,),
-              Text('Exclusive Offer',style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),),
+              const Text('Exclusive Offer',style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),),
               SizedBox(
                 height: Get.height*.25,
                 width: Get.width,
