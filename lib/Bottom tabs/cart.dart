@@ -86,7 +86,7 @@ _counter--;
                          icon:const  Icon(Icons.remove)),
        Text(
                   '$_counter',
-                  style:TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
+                  style:const TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
               ),
                IconButton(onPressed: (){
                   _incrementCounter();
@@ -101,9 +101,9 @@ _counter--;
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                 IconButton(onPressed: 
-                (){}, icon: Icon(Icons.close,size: 30,)),
-                SizedBox(height: 20,),
-                Text('\$ ${_counter*4.5}',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)
+                (){}, icon:const Icon(Icons.close,size: 30,)),
+               const SizedBox(height: 20,),
+                Text('\$ ${_counter*4.5}',style:const  TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)
                        ],),
              )
            
@@ -118,6 +118,7 @@ _counter--;
       )
     );
   }
+  
   
   
 }

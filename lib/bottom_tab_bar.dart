@@ -34,7 +34,9 @@ Widget currebtScreen=const ExplorePage();
     return Scaffold(
      
       //appBar: AppBar(title: const Text('Bottombar',style: TextStyle(color: Colors.black),),),
-     
+    //  drawer: Drawer(
+    //   child: IconButton(onPressed: (){}, icon: Icon(Icons.person)),
+    //  ),
      body: PageStorage(
       bucket: bucket,
       child: currebtScreen),
