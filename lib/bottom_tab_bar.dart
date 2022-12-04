@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mini_store/Bottom%20tabs/cart.dart';
 import 'package:mini_store/Bottom%20tabs/explore.dart';
+import 'package:mini_store/Customer%20Widgets/colors.dart';
 import 'package:mini_store/Screens/favourite.dart';
 import 'package:mini_store/Bottom%20tabs/profile.dart';
 import 'package:mini_store/Bottom%20tabs/category.dart';
@@ -17,7 +18,7 @@ class BottomTabpage extends StatefulWidget {
 
 class _BottomTabpageState extends State<BottomTabpage> {
 int currenttab=0;
-final List screens=[
+final List screens=const [
   
   ExplorePage(),
   CategoryPage(),
@@ -67,9 +68,9 @@ Widget currebtScreen=const ExplorePage();
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
             Icon(Icons.explore,
-            color: currenttab==0? Colors.blue:null,),
+            color: currenttab==0? mainColor:null,),
              Text('Explore',style: TextStyle(
-            color: currenttab==0? Colors.blue:null,
+            color: currenttab==0? mainColor:null,
              ),)
              ],),
              ),
@@ -85,10 +86,10 @@ Widget currebtScreen=const ExplorePage();
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
             Icon(Icons.category,
-            color: currenttab==1? Colors.blue:null,),
+            color: currenttab==1? mainColor:null,),
             Text('Category',
             style: TextStyle(
-            color: currenttab==1? Colors.blue:null,
+            color: currenttab==1? mainColor:null,
              ),)
              ],),
              ),
@@ -104,9 +105,9 @@ Widget currebtScreen=const ExplorePage();
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
             Icon(Icons.shopping_cart,
-            color: currenttab==2? Colors.blue:null,),
+            color: currenttab==2? mainColor:null,),
              Text('Cart',style: TextStyle(
-            color: currenttab==2? Colors.blue:null,
+            color: currenttab==2? mainColor:null,
              ),)
              ],),
              ),
@@ -126,10 +127,10 @@ Widget currebtScreen=const ExplorePage();
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
             Icon(Icons.person,
-            color: currenttab==4? Colors.blue:null,),
+            color: currenttab==4? mainColor:null,),
             Text('Account',
             style: TextStyle(
-            color: currenttab==4? Colors.blue:null,
+            color: currenttab==4? mainColor:null,
              ),)
              ],),
              ), 

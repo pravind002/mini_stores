@@ -1,5 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mini_store/Customer%20Widgets/colors.dart';
+import 'package:mini_store/Screens/favourite.dart';
+import 'package:mini_store/Screens/notification.dart';
 
 import '../Screens/best_selling.dart';
 import '../Screens/exclusive_offer.dart';
@@ -14,6 +18,8 @@ class ExplorePage extends StatefulWidget {
 }
 
 class _ExplorePageState extends State<ExplorePage> {
+
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +52,7 @@ class _ExplorePageState extends State<ExplorePage> {
           ],
         ),
       ),
-      ListTile(
+      ListTile(leading:const  Icon(Icons.account_circle),
         title: const Text('My Profile'),
         onTap: () {
           // Update the state of the app.
@@ -54,12 +60,14 @@ class _ExplorePageState extends State<ExplorePage> {
         },
       ),
       ListTile(
+        leading:const Icon(Icons.notifications_outlined),
         title: const Text('Notitfication'),
         onTap: () {
           // Update the state of the app.
           // ...
         },
       ),ListTile(
+        leading:const  Icon(Icons.local_offer_outlined),
         title: const Text('Offers'),
         onTap: () {
           // Update the state of the app.
@@ -67,6 +75,7 @@ class _ExplorePageState extends State<ExplorePage> {
         },
       ),
       ListTile(
+        leading:const  Icon(Icons.wallet),
         title: const Text('Payment'),
         onTap: () {
           // Update the state of the app.
@@ -74,8 +83,17 @@ class _ExplorePageState extends State<ExplorePage> {
         },
       ),
       ListTile(
+        leading: Icon(Icons.info_outline),
         title: const Text('App Info'),
         onTap: () {
+          // Update the state of the app.
+          // ...
+        },
+      ),
+      ListTile(leading:const  Icon(Icons.logout),
+        title: const Text('LogOut'),
+        onTap: () {
+          FirebaseAuth.instance.signOut();
           // Update the state of the app.
           // ...
         },
@@ -84,11 +102,16 @@ class _ExplorePageState extends State<ExplorePage> {
   ),
       ),
       appBar: AppBar(
-        title: const Text('Mini Store'),
+        backgroundColor: mainColor,
+        title: const Text('M I N I    S T O R E'),
         centerTitle: true,
         actions: [
-          IconButton(onPressed: (){}, icon: const Icon(Icons.favorite_outline_sharp)),
-          IconButton(onPressed: (){}, icon: const Icon(Icons.notification_add_outlined))
+          IconButton(onPressed: (){
+            Get.to(()=>const  FavouritePage());
+          }, icon: const Icon(Icons.favorite_outline_sharp)),
+          IconButton(onPressed: (){
+            Get.to(()=>const NotificationPage());
+          }, icon: const Icon(Icons.notification_add_outlined))
         ],
       ),
       body: SingleChildScrollView(

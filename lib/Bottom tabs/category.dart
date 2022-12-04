@@ -1,5 +1,8 @@
+// import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mini_store/Customer%20Widgets/colors.dart';
 import 'package:mini_store/Screens/best_selling.dart';
 import 'package:mini_store/Screens/exclusive_offer.dart';
 import 'package:mini_store/Screens/offer_page.dart';
@@ -13,13 +16,33 @@ class CategoryPage extends StatefulWidget {
 }
 
 class _CategoryPage extends State<CategoryPage> {
+
+List images=[
+  'asset/badam.jpg',
+  'asset/chana.jpg',
+  'asset/choco.jpg',
+  'asset/donut.jpg',
+  'asset/dryfruits.jpg',
+  'asset/fries.jpg',
+  'asset/items.jpg',
+  'asset/makka.jpg',
+  'asset/potato.jpg',
+  'asset/wada.jpg',
+  'asset/try.webp',
+  'asset/long.webp',
+  'asset/lays.webp',
+  'asset/dhokla.webp',
+  'asset/dry.webp',
+  'asset/chips.webp'
+];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title:Text ('Brands',style: TextStyle(color: Colors.black),),
+        title:Text ('B R A N D S',style: TextStyle(color: mainColor),),
         centerTitle: true,
       ),
       body: Column(
@@ -54,22 +77,35 @@ class _CategoryPage extends State<CategoryPage> {
               ),
           Flexible(
             child: GridView.builder(
-              itemCount: 20,
+              itemCount: images.length,
               itemBuilder: (context,index){
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   height: Get.height*.3,
                   width: Get.width*.3,
-                  decoration: BoxDecoration(border: Border.all(color: Colors.black.withOpacity(.5)),
+                  decoration: BoxDecoration(
+                    color: mainColor.withOpacity(.1),
+                    border: Border.all(color: Colors.black.withOpacity(.5)),
                     borderRadius:const  BorderRadius.all(Radius.circular(20))
                   ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                    Expanded(child: Image.asset('${images[index]}',fit: BoxFit.contain,)),
+                  const   Padding(
+                      padding:  EdgeInsets.all(15),
+                      child: Text('Name'),
+                    )
+                  ],),
                 ),
               );
-            }, gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            }, gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                   childAspectRatio: 120 / 150,
                                   crossAxisCount: 2,
-                              ),),
+                              ),
+                              
+                              ),
           ),
         ],
       )

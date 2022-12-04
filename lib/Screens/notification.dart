@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:mini_store/Customer%20Widgets/colors.dart';
 
-class FavouritePage extends StatefulWidget {
-  const FavouritePage({super.key});
+class NotificationPage extends StatefulWidget {
+  const NotificationPage({super.key});
 
   @override
-  State<FavouritePage> createState() => _FavouritePageState();
+  State<NotificationPage> createState() => _NotificationPageState();
 }
 
-class _FavouritePageState extends State<FavouritePage> {
+class _NotificationPageState extends State<NotificationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: mainColor,
-        title:const  Text('F A V O U R I T E'),
+        title:const  Text('N O T I F I C A T I O N'),
         centerTitle: true,
       ),
     );
