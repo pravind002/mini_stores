@@ -92,11 +92,25 @@ List images=[
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                    Expanded(child: Image.asset('${images[index]}',fit: BoxFit.contain,)),
-                  const   Padding(
-                      padding:  EdgeInsets.all(15),
-                      child: Text('Name'),
-                    )
+                    Expanded(flex: 7,
+                      child: Container(
+                        decoration: BoxDecoration(color:Colors.green,
+                          image: DecorationImage(image: AssetImage('${images[index]}',
+                        
+                        ),fit: BoxFit.fill),
+                          borderRadius: BorderRadius.circular(20)),
+                        // child: Image.asset('${images[index]}',
+                        // fit: BoxFit.fill,
+                        // ),
+                      ),
+                    ),
+                 const  Expanded(
+                    flex: 3,
+                    child: const   Padding(
+                        padding:  EdgeInsets.all(15),
+                        child: Text('Name'),
+                      ),
+                  )
                   ],),
                 ),
               );
