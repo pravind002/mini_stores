@@ -47,6 +47,8 @@ class _ExplorePageState extends State<ExplorePage> {
           children: const [
             CircleAvatar(
               radius: 30,
+              // backgroundColor: Colors.white,
+              backgroundImage: AssetImage('asset/profile.jpg'),
             ),
             Text('Drawer Header'),
           ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mini_store/Customer%20Widgets/colors.dart';
+import 'package:mini_store/Screens/product_details_page.dart';
 
 class ExclusiveOffers extends StatefulWidget {
   const ExclusiveOffers({super.key});
@@ -28,28 +29,36 @@ class _ExclusiveOffersState extends State<ExclusiveOffers> {
     // 'asset/dry.webp',
     // 'asset/chips.webp'
   ];
+
+  List productname=[
+    'Product 1',
+    'Product 2',
+    'Product 3',
+    'Product 4',
+    'Product 5',
+  ];
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
         itemCount: images.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Card(
-              elevation: 10,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
+          return InkWell(
+            onTap: () {
+              Get.to(()=>ProductDetailsPage(image:images[index] ,name:productname[index] ,));
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Container(
                   padding:const EdgeInsets.all(2),
                   margin: const EdgeInsets.all(2),
                   height: Get.height * .25,
                   width: Get.width * .35,
-                  decoration:const BoxDecoration(
-                      // border: Border.all(
-                      //     color: Colors.black.withOpacity(.5), width: 2),
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                          color: Colors.black.withOpacity(.5), width: 1),
                       borderRadius:
-                           BorderRadius.all(Radius.circular(10))),
+                           const BorderRadius.all(Radius.circular(10))),
                   child: Column(
                     children: [
                       Expanded(
@@ -64,7 +73,7 @@ class _ExclusiveOffersState extends State<ExclusiveOffers> {
                                   ),
                                   fit: BoxFit.fill),
                               // border: Border.all(color: Colors.black.withOpacity(.5),width: 2),
-
+          
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(10))),
                         ),
@@ -74,8 +83,8 @@ class _ExclusiveOffersState extends State<ExclusiveOffers> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            const Text(
-                              'Product Name',
+                            Text(
+                              productname[index],
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20),

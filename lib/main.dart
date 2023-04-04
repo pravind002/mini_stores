@@ -13,6 +13,8 @@ await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
+final navigatorkey = GlobalKey<NavigatorState>();
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

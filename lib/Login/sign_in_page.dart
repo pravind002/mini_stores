@@ -154,7 +154,7 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     TextButton(
                         onPressed: () {
-                          Get.to(() => const SignUpPage());
+                          Get.to(() =>  SignUpPage());
                         },
                         child: const Text(
                           'Sign Up',

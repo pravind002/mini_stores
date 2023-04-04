@@ -1,13 +1,45 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mini_store/Login/sign_in_page.dart';
 import 'package:mini_store/bottom_tab_bar.dart';
+import 'package:mini_store/main.dart';
 
 class SignUpPage extends StatefulWidget {
-  const SignUpPage({super.key});
+  // final Function onClickSignUp;
+
+  const SignUpPage({super.key,
+  //  required this.onClickSignUp
+  });
 
   @override
   State<SignUpPage> createState() => _SignUpPageState();
+}
+
+// Comtrollers
+
+class SignUpDetails {
+  String? id;
+  String? fullname;
+  String? email;
+  String? address;
+
+  var data;
+   
+   SignUpDetails({
+     this.id='',
+     required this.fullname,required this.email,required this.address,
+   });
+
+   Map<String, dynamic> toJson() =>{
+'id':id,
+'fullname':fullname,
+'email':email,
+'address':address,
+
+   };
+   static fromJson(data) {}
 }
 
 class _SignUpPageState extends State<SignUpPage> {
@@ -19,6 +51,41 @@ class _SignUpPageState extends State<SignUpPage> {
   final confirmpassController = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
+
+  Future signUp() async {
+    showDialog(
+        context: context,
+        builder: (context) => const Center(child: CircularProgressIndicator()));
+
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: emailController.text.trim(),
+          password: passwordController.text.trim());
+    } on FirebaseAuthException catch (e) {
+      print(e);
+    }
+
+    navigatorkey.currentState!.popUntil((route) => route.isActive);
+  }
+
+  @override
+  void dispose() {
+
+    emailController.dispose();
+    passwordController.dispose();
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+  Future createUser(SignUpDetails user) async {
+    final docUser = FirebaseFirestore.instance.collection('singup').doc();
+    user.id = docUser.id;
+
+    final json = user.toJson();
+    await docUser.set(json);
+
+    await docUser.set(json);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +105,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   //   height: Get.height * .4,
                   //   // width: Get.width,
                   // ),
-                   const SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   const Text(
@@ -75,7 +142,8 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   TextFormField(
                     controller: numberController,
-                    decoration: const InputDecoration(labelText: 'Phone Number'),
+                    decoration:
+                        const InputDecoration(labelText: 'Phone Number'),
                     keyboardType: TextInputType.number,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -139,7 +207,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   //         )),
                   //   ],
                   // ),
-            
+
                   const SizedBox(
                     height: 30,
                   ),
@@ -150,10 +218,17 @@ class _SignUpPageState extends State<SignUpPage> {
                         color: Color.fromARGB(255, 5, 186, 99)),
                     child: TextButton(
                         onPressed: () {
-                          if (formKey.currentState!.validate())
-                          {
-            
-                          Get.to(()=>const  BottomTabpage());
+
+                          signUp();
+                          final user=SignUpDetails(
+                            fullname: fullnameController.text, email: emailController.text, address: addressController.text);
+                            createUser(user);
+                            Get.snackbar('Alert', 'Sign Up Successfull !');
+
+
+
+                          if (formKey.currentState!.validate()) {
+                            Get.offAll(() => const BottomTabpage());
                           }
                         },
                         child: const Text(
