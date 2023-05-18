@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mini_store/Customer%20Widgets/colors.dart';
+
+import '../../constants/colors.dart';
+
+
+
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({super.key});

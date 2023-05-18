@@ -1,12 +1,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mini_store/Bottom%20tabs/cart.dart';
-import 'package:mini_store/Bottom%20tabs/explore.dart';
-import 'package:mini_store/Customer%20Widgets/colors.dart';
-import 'package:mini_store/Screens/favourite.dart';
-import 'package:mini_store/Bottom%20tabs/profile.dart';
-import 'package:mini_store/Bottom%20tabs/category.dart';
+
+
+import 'package:mini_store/view/Bottom%20tabs/cart.dart';
+
+
+import 'constants/colors.dart';
+import 'view/Bottom tabs/category.dart';
+import 'view/Bottom tabs/explore.dart';
+import 'view/Bottom tabs/profile.dart';
+
 
 
 class BottomTabpage extends StatefulWidget {

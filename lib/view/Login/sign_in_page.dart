@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mini_store/Login/sign_up.dart';
+import 'package:mini_store/view/Login/sign_up.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -11,8 +12,8 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+  final emailController = TextEditingController(text: kDebugMode ? 'abc123@gmail.com' :'');
+  final passwordController = TextEditingController(text: kDebugMode ? '123456' :'');
 
   final formKey = GlobalKey<FormState>();
 

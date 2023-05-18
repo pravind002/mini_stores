@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mini_store/Customer%20Widgets/colors.dart';
+
+
+
+import '../../constants/colors.dart';
 
 class FavouritePage extends StatefulWidget {
   const FavouritePage({super.key});

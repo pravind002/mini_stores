@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mini_store/Customer%20Widgets/colors.dart';
+
+
+import '../../constants/colors.dart';
+
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -10,8 +13,12 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+
+//  SignUpDetails signUpDetails=SignUpDetails(fullname: , email: '', phoneNumber: '87656755', address: '');
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: mainColor,
       appBar: AppBar(
@@ -27,13 +34,13 @@ class _ProfilePageState extends State<ProfilePage> {
           const SizedBox(
             height: 10,
           ),
-          const Text(
-            'Pravind Bhardwaj',
+          Text(
+            'Pravind',
             style: TextStyle(
                 color: Colors.white, fontSize: 25, fontWeight: FontWeight.w500),
           ),
-          const Text(
-            '+918104248383',
+          Text(
+            '98765433456',
             style: TextStyle(
                 color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
           ),

@@ -1,12 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mini_store/Customer%20Widgets/colors.dart';
-import 'package:mini_store/Screens/favourite.dart';
-import 'package:mini_store/Screens/notification.dart';
 
+
+import '../../constants/colors.dart';
 import '../Screens/best_selling.dart';
 import '../Screens/exclusive_offer.dart';
+import '../Screens/favourite.dart';
+import '../Screens/notification.dart';
 import '../Screens/offer_page.dart';
 import '../Screens/popular_items.dart';
 

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mini_store/Customer%20Widgets/colors.dart';
-import 'package:mini_store/Screens/product_details_page.dart';
+import 'package:mini_store/view/Screens/product_details_page.dart';
+
+import '../../constants/colors.dart';
+
 
 class ExclusiveOffers extends StatefulWidget {
   const ExclusiveOffers({super.key});

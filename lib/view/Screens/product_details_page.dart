@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../Customer Widgets/colors.dart';
+import '../../constants/colors.dart';
+
+
 
 class ProductDetailsPage extends StatelessWidget {
   ProductDetailsPage({super.key, required this.image, required this.name});

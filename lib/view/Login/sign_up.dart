@@ -2,9 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mini_store/Login/sign_in_page.dart';
-import 'package:mini_store/bottom_tab_bar.dart';
+import 'package:mini_store/view/Login/sign_in_page.dart';
+
 import 'package:mini_store/main.dart';
+
+import '../../bottom_tab_bar.dart';
 
 class SignUpPage extends StatefulWidget {
   // final Function onClickSignUp;
@@ -23,19 +25,24 @@ class SignUpDetails {
   String? id;
   String? fullname;
   String? email;
+  String? phoneNumber;
   String? address;
+
 
   var data;
    
    SignUpDetails({
      this.id='',
-     required this.fullname,required this.email,required this.address,
+     required this.fullname,required this.email,
+     required this.phoneNumber,
+     required this.address,
    });
 
    Map<String, dynamic> toJson() =>{
 'id':id,
 'fullname':fullname,
 'email':email,
+'phone_number':phoneNumber,
 'address':address,
 
    };
@@ -220,7 +227,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         onPressed: () {
 
                           signUp();
-                          final user=SignUpDetails(
+                          final user=SignUpDetails(phoneNumber:numberController.text ,
                             fullname: fullnameController.text, email: emailController.text, address: addressController.text);
                             createUser(user);
                             Get.snackbar('Alert', 'Sign Up Successfull !');

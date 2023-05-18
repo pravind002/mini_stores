@@ -2,11 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mini_store/Customer%20Widgets/colors.dart';
-import 'package:mini_store/Screens/best_selling.dart';
-import 'package:mini_store/Screens/exclusive_offer.dart';
-import 'package:mini_store/Screens/offer_page.dart';
-import 'package:mini_store/Screens/popular_items.dart';
+
+import '../../constants/colors.dart';
+
+
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({super.key});
